@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "Idealect Address Search",
+  "version": "0.0.1",
+  "description": "Lookup internet service providers by address",
+  "icons": {
+
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://fiber.google.com/"],
+      "js": ["./content-scripts/google-fiber.js"]
+    },
+    {
+      "matches": ["https://www.att.com/availability/"],
+      "js": ["./content-scripts/att.js"]
+    },
+    {
+      "matches": ["https://www.consolidated.com/residential/internet/order-internet"],
+      "js": ["./content-scripts/consolidated.js"]
+    },
+    {
+      "matches": ["https://www.xfinity.com/learn/internet-service"],
+      "js": ["./content-scripts/xfinity.js"]
+    },
+    {
+      "matches": ["https://official.spectrum.com/order"],
+      "js": ["./content-scripts/spectrum.js"]
+    }
+  ],
+  "browser_action": {
+    "default_title": "Address Search",
+    "default_popup": "popup.html"
+  },
+  "author": "joelongstreet@gmail.com",
+  "homepage_url": "https://github.com/joelongstreet/idealect-address-search"
+}
